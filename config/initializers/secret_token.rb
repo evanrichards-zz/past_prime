@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-PastPrime::Application.config.secret_key_base = 'c1afffa4b9af32d39958ee4a95856a25310879a3cd7ed55e84094ba5ad340b7ca87059c8f9190fc9c4a7a650c3eccbf7bc3d64c4270436e99034a55d49a54080'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+PastPrime::Application.config.secret_key_base = secure_token
