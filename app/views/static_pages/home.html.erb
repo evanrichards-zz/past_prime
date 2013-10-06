@@ -1,0 +1,42 @@
+<div class="center hero-unit">
+	<h1>Past Prime</h1>
+	
+	<h2>Express your elitist cinema opinions!</h2>
+	<h2>Coming Soon!</h2>
+</div>
+	<h2>Did you hate...</h2>
+	<p class="lead">
+		Al Pacino in <i>Jack and Jill</i>? Jeff Bridges in <i>RIPD</i>? John Voight in <i>SuperBabies: Baby Geniuses 2</i>!?...Great actors, god-awful films. They should've quit before they tore apart the fabric of space and time. Do you wish you had a place to impose your obviously correct opinion upon the rest of the world? deadBox, where careers go to die!
+	</p>
+<section class="highlights">
+	<div class="container text-center">
+		<h2 class="highText">Your place for trolling and fighting with friends.</h2>
+		<div class="row">
+			<div class="col-lg-4">
+				<i class="icon-search"></i>	
+				<h3>Search</h3>
+				<p>Tap into TMDB to search for your favorite actors & actresses.</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="icon-thumbs-up"></i>
+				<h3>Vote</h3>
+				<p>Let the world know how much was too much.</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="icon-warning-sign"></i>
+				<h3>Argue</h3>
+				<p>See what other people think and tell them why they're wrong!</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="quotes">
+	<div class="container text-center">
+		<% @popular.first(3).each do |person| %>
+			<%if person %>
+				<%= image_tag("#{@configuration.base_url}w185#{person['profile_path']}") if person['profile_path'] %>
+			<% end %>
+			<br> "I have never made a bad movie." - <%= person['name'] %><br>
+		<% end %>
+	</div>
+</section>
