@@ -1,13 +1,18 @@
 <div class="center hero-unit">
 	<h1>Past Prime</h1>
 	
-	<h2>Express your elitist cinema opinions!</h2>
-	<h2>Coming Soon!</h2>
+	<h2>Search for an actor:</h2>
+	<%= form_tag("/search", :method => "get") do %>
+		<%= text_field_tag(:query, nil, :class => "input-medium search-query") %>
+		<%= button_tag(:class => "btn") do%>
+		<%= "Search" %>
+		<% end %>
+	<% end %>
 </div>
-	<h2>Did you hate...</h2>
-	<p class="lead">
-		Al Pacino in <i>Jack and Jill</i>? Jeff Bridges in <i>RIPD</i>? John Voight in <i>SuperBabies: Baby Geniuses 2</i>!?...Great actors, god-awful films. They should've quit before they tore apart the fabric of space and time. Do you wish you had a place to impose your obviously correct opinion upon the rest of the world? deadBox, where careers go to die!
-	</p>
+<h2>Did you hate...</h2>
+<p class="lead">
+	Al Pacino in <i>Jack and Jill</i>? Jeff Bridges in <i>RIPD</i>? John Voight in <i>SuperBabies: Baby Geniuses 2</i>!?...Great actors, god-awful films. They should've quit before they tore apart the fabric of space and time. Do you wish you had a place to impose your obviously correct opinion upon the rest of the world? deadBox, where careers go to die!
+</p>
 <section class="highlights">
 	<div class="container text-center">
 		<h2 class="highText">Your place for trolling and fighting with friends.</h2>
