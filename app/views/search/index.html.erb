@@ -9,7 +9,7 @@
 				<td>
 					<h2><%= person.name if person.name %></h2>
 					<ul>
-						<% getCredits(person.id)["cast"].first(4).each do |movie|%>
+						<% getCredits(person.id)["credits"].first(4).each do |movie|%>
 						<li><%= movie['title'] %></li>
 						<% end %>
 					</ul>
