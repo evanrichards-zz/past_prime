@@ -1,8 +1,10 @@
 PastPrime::Application.routes.draw do
   get "users/new"
   root  'static_pages#home'
+  match 'popular', to: 'static_pages#popular', via: 'get'
+  match 'about', to: 'static_pages#about', via: 'get'
   match 'search', to: "search#index", via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  match 'contact', to: 'static_pages#contact', via: 'get'
   match 'person', to: "person#show", via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

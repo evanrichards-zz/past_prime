@@ -1,0 +1,37 @@
+<section class="popular">
+	<h2 class="text-center">Jump right in with these actors:</h2>
+	<div class="row">
+
+		<% @popular.first(4).each do |actor| %>
+		<div class="span3 text-center">
+			<%= link_to(person_path(:id => actor['id'])) do %>
+				<%= image_tag("#{@configuration.base_url}w185#{actor['profile_path']}", :class => 'img-polaroid') %>
+				<br>
+				<%= actor['name'] %>
+			<%end%>
+		</div>
+		<% end %>
+	</div>
+	<div class="row">
+		<% @popular[4..7].each do |actor| %>
+		<div class="span3 text-center">
+			<%= link_to(person_path(:id => actor['id'])) do %>
+			<%= image_tag("#{@configuration.base_url}w185#{actor['profile_path']}", :class => 'img-polaroid') %>
+			<br>
+			<%= actor['name'] %>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	<div class="row">
+	<% @popular[8..11].each do |actor| %>
+	<div class="span3 text-center">
+		<%= link_to(person_path(:id => actor['id'])) do %>
+		<%= image_tag("#{@configuration.base_url}w185#{actor['profile_path']}", :class => 'img-polaroid') %>
+		<br>
+		<%= actor['name'] %>
+		<% end %>
+	</div>
+	<% end %>
+	</div>
+</section>

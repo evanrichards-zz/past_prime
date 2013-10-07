@@ -4,6 +4,7 @@
 			<%= link_to "Past Prime", root_path, id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
+					<li><%= link_to "Popular", popular_path %></li>
 					<li><%= form_tag("/search", :method => "get") do %>
 					<%= text_field_tag(:query, nil,:placeholder => "Search here", :class => "input-small search-query") %>
 					<% end %>
