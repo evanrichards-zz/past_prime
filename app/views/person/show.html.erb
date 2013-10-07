@@ -1,0 +1,27 @@
+<% provide(:title, @actor.name) %>
+<div class="row">
+	<div class="span4 text-center">
+		<%= image_tag("#{@configuration.base_url}w154#{@actor.profile_path}", :class => 'img-polaroid')%>
+		<br>
+		He should have quit after:
+		<%= form_tag("#", :method => "get") do %>
+			<%= text_field_tag(:query, 
+								nil,
+								:placeholder => "Choose year",
+								:class => "input-small search-query") %>
+			<%= button_tag(:class => "btn") do%>
+			<%= "Vote" %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="span8">
+		<h1><%= @actor.name %></h1>
+		<ul>
+			<% @movies['cast'].sort_by { |k| k["release_date"]}.each do |movie| %>
+				<% if not movie['release_date'].empty? %>
+					<li><%= movie['title'] %>, <%= movie['release_date'][0,4] %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+</div>

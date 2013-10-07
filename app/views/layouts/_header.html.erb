@@ -1,15 +1,13 @@
 <header class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<%= link_to "Past Prime", '#', id: "logo" %>
+			<%= link_to "Past Prime", root_path, id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
 					<li><%= form_tag("/search", :method => "get") do %>
 					<%= text_field_tag(:query, nil,:placeholder => "Search here", :class => "input-small search-query") %>
 					<% end %>
 					</li>
-					<li><%= link_to "Home",		root_path %></li>
-					<li><%= link_to "Contact",	contact_path %></li>
 				</ul>
 			</nav>
 		</div>

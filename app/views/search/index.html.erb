@@ -3,14 +3,15 @@
 		<% if numMovies(person.id) > 10 %>
 			<tr>
 				<td style="width:15%">
-					<%= image_tag("#{@configuration.base_url}w154#{person.profile_path}") if person.profile_path %>
-					
+					<%= link_to person_path(:id => person.id) do  %>
+						<%= image_tag("#{@configuration.base_url}w154#{person.profile_path}") if person.profile_path %>
+					<% end %>
 				</td>
 				<td>
-					<h2><%= person.name if person.name %></h2>
+					<h2><%= link_to person.name, person_path(:id => person.id) %></h2>
 					<ul>
 						<% getCredits(person.id)["credits"].first(4).each do |movie|%>
-						<li><%= movie['title'] %></li>
+							<li><%= movie['title'] %></li>
 						<% end %>
 					</ul>
 				</td>
